@@ -48,4 +48,18 @@ function completeTask(id){
         console.log("Tâche terminée : " + task.title);
     }
 }
-module.exports = { addTasks, listTasks,completeTask };
+function deleteTask(id){
+    const task=loadTasks();
+    const filteredTasks = task.filter(t => t.id !== Number(id));
+    if(task.length === filteredTasks.length){
+        console.log("Erreur : l'ID de la tâche a supprimer n'a pas était trouver");
+        return;
+    }
+    else{
+        saveTasks(filteredTasks);
+        console.log("Tâche supprimer");
+    }
+}
+
+
+module.exports = { addTasks, listTasks,completeTask,deleteTask };

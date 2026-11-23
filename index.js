@@ -1,4 +1,4 @@
-const { addTasks, listTasks,completeTask } = require('./tasks');
+const { addTasks, listTasks,completeTask,deleteTask } = require('./tasks');
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -14,6 +14,10 @@ const commands = {
     done: () => {
         if(!argument) return console.log("Erreur : il manque l'ID")
             completeTask(argument);
+    },
+    delete: () =>{
+        if(!argument) return console.log("Erreur : il manque l'ID")
+            deleteTask(argument);
     }
 };
 if(commands[command]){
