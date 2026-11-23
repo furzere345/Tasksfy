@@ -24,8 +24,8 @@ function addTasks(title){
 }
 function listTasks(){
     const tasks = loadTasks();
-    if(tasks.lenght === 0){
-        consoel.log("Aucune tâches pour le moment.");
+    if(tasks.length === 0){
+        console.log("Aucune tâches pour le moment.");
         return;
     }
     tasks.forEach(task => {
@@ -35,4 +35,17 @@ function listTasks(){
         console.log("-------------------");
     });
 }
-module.exports = { addTasks, listTasks };
+function completeTask(id){
+    const tasks = loadTasks();
+    const task = tasks.find(t => t.id === Number(id));
+    if(!task){
+        console.log("Erreur : aucune tâche trouvée avec cet ID");
+        return;
+    }
+    else{
+        task.done = true;
+        saveTasks(tasks);
+        console.log("Tâche terminée : " + task.title);
+    }
+}
+module.exports = { addTasks, listTasks,completeTask };

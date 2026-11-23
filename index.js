@@ -1,21 +1,23 @@
-const { addTasks, listTasks } = require('./tasks');
+const { addTasks, listTasks,completeTask } = require('./tasks');
 
 const args = process.argv.slice(2);
 const command = args[0];
 const argument = args[1];
-
-if (command === 'add') {
-    if (args.length < 2) {
-        console.log("Erreur : il manque le titre de la tâche.");
-        return;
+const commands = {
+    add: () => {
+        if(!argument) return console.log("Erreur : il manque le titre.")
+            addTasks(argument);
+        },
+    list: () => {
+        listTasks();
+    },
+    done: () => {
+        if(!argument) return console.log("Erreur : il manque l'ID")
+            completeTask(argument);
     }
-    addTasks(argument);
-
-} else if (command === 'list') {
-    listTasks();
-
-} else {
-    console.log('Commande inconnue. Utilise :');
-    console.log('  node index.js add "Ma tâche"');
-    console.log('  node index.js list');
+};
+if(commands[command]){
+    commands[command]();
+}else{
+    console.log("Commande inconnue. Utilise : add, list ou done.");
 }
