@@ -21,6 +21,18 @@ function addTasks(title){
     saveTasks(tasks);
     console.log('Tache ajoutee :',title);
 
-
 }
-module.exports = {addTasks};
+function listTasks(){
+    const tasks = loadTasks();
+    if(tasks.lenght === 0){
+        consoel.log("Aucune tâches pour le moment.");
+        return;
+    }
+    tasks.forEach(task => {
+        console.log("Id : ",task.id);
+        console.log("titre : ",task.title);
+        console.log("status : ",task.done);
+        console.log("-------------------");
+    });
+}
+module.exports = { addTasks, listTasks };
