@@ -8,5 +8,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furzere345/Tasksfy.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/furzere345/Tasksfy/issues"
+  },
+  "homepage": "https://github.com/furzere345/Tasksfy#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
 }
