@@ -1,4 +1,4 @@
-const { addTasks, listTasks,completeTask,deleteTask } = require('./tasks');
+const { addTasks, listTasks,completeTask,deleteTask } = require('../services/tasks');
 
 const args = process.argv.slice(2);
 const command = args[0];
