@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskfy.exe — Gestionnaire de tâches</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barre supérieure -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="brand">Taskfy</span>
+      <nav class="main-nav">
+        <button class="nav-pill active">Accueil</button>
+        <button class="nav-pill">Calendrier</button>
+      </nav>
+    </div>
+
+    <div class="topbar-right">
+      <input type="search" class="search-input" placeholder="Rechercher une tâche...">
+      <button class="btn-primary">+ Nouvelle tâche</button>
+      <div class="avatar" title="Profil"></div>
+    </div>
+  </header>
+
+  <!-- Conteneur principal -->
+  <div class="app-layout">
+
+    <!-- Colonne latérale (Espaces) -->
+    <aside class="sidebar">
+      <div class="window-box">
+        <div class="window-header">
+          <span>spaces.dll</span>
+          <div class="window-controls">
+            <span>_</span><span>□</span><span>×</span>
+          </div>
+        </div>
+        <div class="window-body">
+          <p class="sidebar-label">// ESPACES</p>
+          <ul class="space-list">
+            <li class="space-item active"><span class="dot dot-purple"></span> Tous les projets</li>
+            <li class="space-item"><span class="dot dot-pink"></span> Cours IUT</li>
+            <li class="space-item"><span class="dot dot-cyan"></span> Dev & GitHub</li>
+            <li class="space-item"><span class="dot dot-yellow"></span> Stream Twitch</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Zone de travail -->
+    <main class="workspace">
+
+      <!-- En-tête de vue -->
+      <div class="view-bar">
+        <h1 class="view-title">&gt;_ Mes Tâches</h1>
+        <div class="view-tabs">
+          <button class="tab-btn active">Liste</button>
+          <button class="tab-btn">Kanban</button>
+          <button class="tab-btn">Calendrier</button>
+        </div>
+      </div>
+
+      <!-- Fenêtre statut : En cours -->
+      <section class="window-box">
+        <div class="window-header">
+          <span>in_progress.exe (2)</span>
+          <div class="window-controls">
+            <span>_</span><span>□</span><span>×</span>
+          </div>
+        </div>
+        <div class="window-body task-list">
+          <article class="task-row">
+            <label class="task-check">
+              <input type="checkbox">
+              <span class="task-title">Terminer la maquette UI de Taskfy</span>
+            </label>
+            <div class="task-meta">
+              <span class="tag tag-dev">Dev</span>
+              <span class="priority priority-urgent">Urgent</span>
+              <time class="due-date">28 Nov</time>
+            </div>
+          </article>
+
+          <article class="task-row">
+            <label class="task-check">
+              <input type="checkbox">
+              <span class="task-title">Préparer le setup OBS et les scènes</span>
+            </label>
+            <div class="task-meta">
+              <span class="tag tag-stream">Stream</span>
+              <span class="priority priority-normal">Normal</span>
+              <time class="due-date">30 Nov</time>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Fenêtre statut : À faire -->
+      <section class="window-box">
+        <div class="window-header">
+          <span>todo.exe (1)</span>
+          <div class="window-controls">
+            <span>_</span><span>□</span><span>×</span>
+          </div>
+        </div>
+        <div class="window-body task-list">
+          <article class="task-row">
+            <label class="task-check">
+              <input type="checkbox">
+              <span class="task-title">Réviser le TP architecture MVC</span>
+            </label>
+            <div class="task-meta">
+              <span class="tag tag-cours">Cours</span>
+              <span class="priority priority-low">Basse</span>
+              <time class="due-date">02 Déc</time>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
